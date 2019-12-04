@@ -1,0 +1,14 @@
+﻿
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+<div>
+
+    <button>@Html.ActionLink("Nominee", "NomineeRegister", "Election")</button>
+    <button>@Html.ActionLink("Voter", "BallotForm", "Election")</button>
+</div>
+}
+

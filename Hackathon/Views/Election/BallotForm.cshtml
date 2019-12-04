@@ -1,0 +1,141 @@
+﻿@model IEnumerable<Hackathon.Models.NomineeForm>
+
+@{
+    ViewBag.Title = "BallotForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BallotForm</h2>
+
+
+
+@*@for (int i = 1; i <= 5; i++)
+    {*@
+@using (Html.BeginForm("BallotForm","Election",FormMethod.Post))
+{
+    <h2>President Candidates</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentOccupation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreviousRwaMember)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicSectorEmployee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CriminalRecord)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlatNumber)
+            </th>
+            <th>
+                Select Your Candidate
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Where(j => j.RWAPosition.PositionName == "President"))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CandidateName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qualification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentOccupation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PreviousRwaMember)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicSectorEmployee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CriminalRecord)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlatNumber)
+                </td>
+                <td >
+                    @*<input type="radio" id="btnPresident" name="btn" value=@item.RWAPosition.Id />*@
+                   @* @Html.RadioButton("Select", true, new { id = item.RWAPosition.Id })*@
+                    @Html.ActionLink("Vote", "Ballot", "Election", new { id=item.Id},null)
+                </td>
+
+            </tr>
+        }`
+    </table>
+    @*<center>
+        <input type="submit" value="Vote" id="btnSubmit" class="btn btn-primary"/>
+    </center>*@
+   
+}
+@*
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentOccupation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreviousRwaMember)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicSectorEmployee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CriminalRecord)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlatNumber)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Where(j => j.RWAPosition.PositionName == ))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CandidateName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qualification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentOccupation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PreviousRwaMember)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicSectorEmployee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CriminalRecord)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlatNumber)
+                </td>
+
+            </tr>
+        }
+
+        </table>*@
+
+
+

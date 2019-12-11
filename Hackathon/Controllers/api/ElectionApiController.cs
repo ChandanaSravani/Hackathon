@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hackathon.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,5 +10,14 @@ namespace Hackathon.Controllers.api
 {
     public class ElectionApiController : ApiController
     {
+        private ApplicationDbContext _dbContext=null;
+        public ElectionApiController()
+        {
+            _dbContext = new ApplicationDbContext();
+        }
+        public IEnumerable<BaseData> GetAllPeople()
+        {
+            return _dbContext.BaseDatas.ToList();
+        }
     }
 }

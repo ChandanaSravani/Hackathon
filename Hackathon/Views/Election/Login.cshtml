@@ -2,45 +2,37 @@
 @using (Html.BeginForm())
 
 {
-
+    <br/>
     <center>
-
+        <h2>
+            <font color="red">
+                LogIn To Nominate Or Vote for RWA Elections
+            </font>
+        </h2>
         <div class="container">
-
             <div>
-
                 @Html.Label("Flat No")
 
-                @Html.TextBox("FlatNo")
+                @Html.TextBox("FlatNo", "", new { @class = "form-control", autoComplete = "off" })
 
             </div>
 
             <br />
-
             <div>
-
-
-
             </div>
-
             <br />
-
             <div>
 
                 @Html.Label("Password")
 
-                @Html.TextBox("Password")
+                @Html.Password("Password", "", new { @class = "form-control", autoComplete = "off" })
 
             </div>
-
         </div>
         <br />
-
         <input type="submit" value="Login" id="btnSubmit" class="btn btn-primary" />
 
     </center>
-
-
 }
 
 

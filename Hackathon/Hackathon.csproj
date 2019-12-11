@@ -187,39 +187,34 @@
     <Compile Include="Controllers\ElectionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="dtos\NomineeDto.cs" />
+    <Compile Include="dtos\RWAPositionDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912040619277_NomineeAndRwaPositionDB.cs" />
-    <Compile Include="Migrations\201912040619277_NomineeAndRwaPositionDB.Designer.cs">
-      <DependentUpon>201912040619277_NomineeAndRwaPositionDB.cs</DependentUpon>
+    <Compile Include="Migrations\201912050425319_createTable.cs" />
+    <Compile Include="Migrations\201912050425319_createTable.Designer.cs">
+      <DependentUpon>201912050425319_createTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912040954205_RemoveReferenceKey.cs" />
-    <Compile Include="Migrations\201912040954205_RemoveReferenceKey.Designer.cs">
-      <DependentUpon>201912040954205_RemoveReferenceKey.cs</DependentUpon>
+    <Compile Include="Migrations\201912050541395_new.cs" />
+    <Compile Include="Migrations\201912050541395_new.Designer.cs">
+      <DependentUpon>201912050541395_new.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912041000153_propertyaddedinnominee.cs" />
-    <Compile Include="Migrations\201912041000153_propertyaddedinnominee.Designer.cs">
-      <DependentUpon>201912041000153_propertyaddedinnominee.cs</DependentUpon>
+    <Compile Include="Migrations\201912050607188_newDb.cs" />
+    <Compile Include="Migrations\201912050607188_newDb.Designer.cs">
+      <DependentUpon>201912050607188_newDb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912041026342_VotingDataCreatedTable.cs" />
-    <Compile Include="Migrations\201912041026342_VotingDataCreatedTable.Designer.cs">
-      <DependentUpon>201912041026342_VotingDataCreatedTable.cs</DependentUpon>
+    <Compile Include="Migrations\201912050644438_createnewtable.cs" />
+    <Compile Include="Migrations\201912050644438_createnewtable.Designer.cs">
+      <DependentUpon>201912050644438_createnewtable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912041056565_newprop.cs" />
-    <Compile Include="Migrations\201912041056565_newprop.Designer.cs">
-      <DependentUpon>201912041056565_newprop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912041250202_removingpropinvotingdata.cs" />
-    <Compile Include="Migrations\201912041250202_removingpropinvotingdata.Designer.cs">
-      <DependentUpon>201912041250202_removingpropinvotingdata.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912041339079_removingprop.cs" />
-    <Compile Include="Migrations\201912041339079_removingprop.Designer.cs">
-      <DependentUpon>201912041339079_removingprop.cs</DependentUpon>
+    <Compile Include="Migrations\201912050659576_addbasedata.cs" />
+    <Compile Include="Migrations\201912050659576_addbasedata.Designer.cs">
+      <DependentUpon>201912050659576_addbasedata.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BaseData.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NomineeForm.cs" />
@@ -326,6 +321,12 @@
     <Content Include="Views\Election\Index.cshtml" />
     <Content Include="Views\Election\BallotForm.cshtml" />
     <Content Include="Views\Election\Result.cshtml" />
+    <Content Include="Views\Election\Result1.cshtml" />
+    <Content Include="Views\Election\DisplayMessage.cshtml" />
+    <Content Include="Views\Election\Message.cshtml" />
+    <Content Include="Views\Election\MinAge.cshtml" />
+    <Content Include="Views\Election\DeleteNomineeDetails.cshtml" />
+    <Content Include="Views\Election\ListOfNominees.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,30 +345,24 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912040619277_NomineeAndRwaPositionDB.resx">
-      <DependentUpon>201912040619277_NomineeAndRwaPositionDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912040954205_RemoveReferenceKey.resx">
-      <DependentUpon>201912040954205_RemoveReferenceKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912041000153_propertyaddedinnominee.resx">
-      <DependentUpon>201912041000153_propertyaddedinnominee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912041026342_VotingDataCreatedTable.resx">
-      <DependentUpon>201912041026342_VotingDataCreatedTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912041056565_newprop.resx">
-      <DependentUpon>201912041056565_newprop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912041250202_removingpropinvotingdata.resx">
-      <DependentUpon>201912041250202_removingpropinvotingdata.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912041339079_removingprop.resx">
-      <DependentUpon>201912041339079_removingprop.cs</DependentUpon>
-    </EmbeddedResource>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <EmbeddedResource Include="Migrations\201912050425319_createTable.resx">
+      <DependentUpon>201912050425319_createTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912050541395_new.resx">
+      <DependentUpon>201912050541395_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912050607188_newDb.resx">
+      <DependentUpon>201912050607188_newDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912050644438_createnewtable.resx">
+      <DependentUpon>201912050644438_createnewtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912050659576_addbasedata.resx">
+      <DependentUpon>201912050659576_addbasedata.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

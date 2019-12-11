@@ -32,6 +32,7 @@ namespace Hackathon.Models
         public DbSet<NomineeForm> NomineeForms { get; set; }
         public DbSet<RWAPosition> RWAPositions { get; set; }
         public DbSet<VotingData> VotingDatas { get; set; }
+        public DbSet<BaseData> BaseDatas { get; set; }
 
 
     }

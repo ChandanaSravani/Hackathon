@@ -1,0 +1,92 @@
+﻿@model Hackathon.Models.NomineeForm
+
+@{
+    ViewBag.Title = "DeleteNomineeDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DeleteNomineeDetails</h2>
+
+<div>
+    <h4>NomineeForm</h4>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.RWAPosition.PositionName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RWAPosition.PositionName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Qualification)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Qualification)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CurrentOccupation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CurrentOccupation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PreviousRwaMember)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PreviousRwaMember)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PublicSectorEmployee)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PublicSectorEmployee)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CriminalRecord)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CriminalRecord)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FlatNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FlatNumber)
+            </dd>
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CandidateName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CandidateName)
+            </dd>
+
+        </dl>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
+    </div>
+    }
+</div>
+   
+
